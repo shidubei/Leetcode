@@ -1,11 +1,12 @@
 package Sort
 
-func quickSort(array []int, begin, end int) {
-	for begin < end {
+func QuickSort(array []int, begin, end int) []int {
+	if begin < end {
 		index := partition(array, begin, end)
-		quickSort(array, begin, index-1)
-		quickSort(array, index+1, end)
+		QuickSort(array, begin, index-1)
+		QuickSort(array, index+1, end)
 	}
+	return array
 }
 
 // 更新返回基准值的index
@@ -15,7 +16,7 @@ func partition(array []int, begin, end int) int {
 	j := end       // j记录基准值右边
 
 	for i < j {
-		if array[i] > array[begin] {
+		if array[i] < array[begin] {
 			// 大于基准值，交换
 			array[i], array[j] = array[j], array[i]
 			j--
@@ -25,7 +26,7 @@ func partition(array []int, begin, end int) int {
 		}
 	}
 	// 循环结束，检查i是否满足
-	if array[i] >= array[begin] {
+	if array[i] <= array[begin] {
 		i--
 	}
 	array[i], array[begin] = array[begin], array[i]
