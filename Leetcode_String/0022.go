@@ -1,4 +1,4 @@
-package string
+package Leetcode_String
 
 // 回溯的思想
 /*题目：给定n对括号，要求输出所有匹配正确的可能形式，如n=3时

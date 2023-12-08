@@ -1,4 +1,4 @@
-package string
+package Leetcode_String
 
 // func lengthOfLastWord(s string) int {
 // 	last := len(s) - 1

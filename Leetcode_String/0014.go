@@ -1,4 +1,4 @@
-package string
+package Leetcode_String
 
 /*题目：用一个函数来查找一个字符串数组的最长公共前缀*/
 
