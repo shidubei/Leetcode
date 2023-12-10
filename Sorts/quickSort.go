@@ -1,5 +1,7 @@
 package Sort
 
+import "math/rand"
+
 func QuickSort(array []int, begin, end int) []int {
 	if begin < end {
 		index := partition(array, begin, end)
@@ -31,4 +33,36 @@ func partition(array []int, begin, end int) int {
 	}
 	array[i], array[begin] = array[begin], array[i]
 	return i
+}
+
+// 随机快排算法，将时间复杂度降到了O(NlogN)
+var first int
+var last int
+
+func quickSort2(arr []int, left, right int) {
+	if left > right {
+		return
+	}
+	x := arr[left+rand.Intn(right-left+1)]
+	partition2(arr, left, right, x)
+	l, r := first, last
+	quickSort2(arr, left, l-1)
+	quickSort2(arr, r+1, right)
+}
+
+func partition2(arr []int, left, right, x int) {
+	first, last = left, right
+	i := left
+	for i <= last {
+		if arr[i] == x {
+			i++
+		} else if arr[i] < x {
+			arr[first], arr[i] = arr[i], arr[first]
+			first++
+			i++
+		} else {
+			arr[i], arr[last] = arr[last], arr[i]
+			last--
+		}
+	}
 }
