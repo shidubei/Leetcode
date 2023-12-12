@@ -11,4 +11,7 @@
 
 **Hahhhhhhh,just some free talk,have a nice time when you watch it and Good luck to you!**
 
+![image](https://github.com/shidubei/Leetcode/assets/71639835/2e6881b0-2e83-4ae3-929e-0d6ecc3c6292)
+
+
 **-- by ShiDu**
